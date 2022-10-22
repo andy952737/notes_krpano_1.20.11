@@ -1,0 +1,162 @@
+<krpano onstart="startup();" showerrors="false">  
+		<include url="krpano-1.20.11/viewer/plugins/webvr.xml" />
+		<plugin name="WebVR" mobilevr_fake_support="true" />
+       
+    <textstyle name="TEXTSTYLE" font="Arial" fontsize="18" bold="true" background="false" border="false" textcolor="0xFFFFFF" effect="glow(0x000000);" textalign="center"/> 
+
+
+
+  	<!-- <scene name='' scenetitle="" thumburl="" nowpic="" id="" onstart="">-->
+		  
+		  <!-- 預設場景座標 -->     
+  		<view hlookat="0.0" vlookat="0.0" camroll="0.0" fovtype="VFOV" fov="50" maxpixelzoom="1.0" fovmax="150" limitview="auto" /> 
+  
+  			<!--  取得全景 '多張圖,需串接' && 使用迴圈 arrar撈資料  
+			<preview url='scene.preview_image_url' />
+			<image type="CUBE" progressive="false">
+				<left url="scene.normal_image_urls[:left]" />
+				<front url="scene.normal_image_urls[:front]" />
+				<right url="scene.normal_image_urls[:right]%>" />
+				<back url="scene.normal_image_urls[:back]%>" />
+				<up url="scene.normal_image_urls[:up]" />
+				<down url="scene.normal_image_urls[:down]" />
+				<mobile>
+					<left url="scene.mobile_image_urls[:left]" />
+					<front url="scene.mobile_image_urls[:front]" />
+					<right url="scene.mobile_image_urls[:right]" />
+					<back url="scene.mobile_image_urls[:back]" />
+					<up url="scene.mobile_image_urls[:up]" />
+					<down url="scene.mobile_image_urls[:down]" />
+				</mobile>
+			</image> -->
+
+			<!-- 取得全景 1張圖 -->
+	    	<preview url=""/>  
+			<image hfov="360.00" vfov="180.000000" voffset="0.00">
+				<sphere url="image/vr.jpg" />
+			</image>	
+
+   	<!-- </scene> -->
+
+   	<!-- 熱點的參數 -->  
+	<!--  <hotspot name="場景1"
+         type="image"
+         url="image/icon_hotspot.png"
+         alturl="image/icon_hotspot.png"
+         keep="false"
+         visible="true"
+         enabled="true"
+         handcursor="true"
+         cursor="pointer"
+         maskchildren="false"
+         zorder=""
+         style=""
+         ath="0.0" atv="0.0"
+         edge="center"
+         zoom="false"
+         distorted="false"
+         rx="0.0" ry="0.0" rz="0.0"
+         width="80" height="80"
+         scale="1.0"
+         rotate="0.0"
+         alpha="1.0"
+         onover.addevent=""
+         onhover.addevent=""
+         onout.addevent=""
+         ondown.addevent=""
+         onup.addevent=""
+         onclick.addevent=""
+         onloaded.addevent=""
+         /> -->
+
+   	<!-- pano 右鍵選單 --> 
+    <contextmenu fullscreen="false" versioninfo="false">
+		<item name="全螢幕" caption="全螢幕" enabled="true" separate="true" onclick="switch(fullscreen);"/> 
+		<item name="Powered by Andy Pano" caption="Powered by Andy Pano" enabled="true" separate="true" onclick="openurl('https://codelove.online/')"/>    
+	</contextmenu>       
+  
+			<action name="add_hotspot">   
+					addhotspot(%1);
+					set(hotspot[%1].url,%2);
+					set(hotspot[%1].ath,%3);
+					set(hotspot[%1].atv,%4); 
+					set(hotspot[%1].onclick, click_hotspot(%1));
+					<!-- jscall("console.log('%1')"); 
+					jscall("console.log('%2')");
+					jscall("console.log('%3')");
+					jscall("console.log('%4')"); -->
+					<!-- set(hotspot[newspot].scale,0.7); -->
+					<!-- set(hotspot[newspot].zoom,true); -->
+			</action>    
+ 
+			<action name="click_hotspot">	      
+				jscall("console.log('%1')");
+				<!-- jscall("alert('%1')"); -->
+				<!-- jscall("test(%1)");   -->
+				<!-- js(test(%1)); -->
+				<!-- set(hotspot_h, get(hotspot[q_%1].ath));
+				set(hotspot_v, get(hotspot[q_%1].atv));	
+				spheretoscreen(hotspot_h, hotspot_v, mouse_x, mouse_y);   -->
+				<!-- js(PanoInterface.on_click_hotspot(%1, get(mouse_x), get(mouse_y), get(pano_id)));
+				jscall("console.log('xmlaction执行了')");  -->
+			</action>  
+
+<!-- 			<action name="spot72">
+			  set(aa, '我是aa');
+			  js(test(get(aa), bb)); 
+			  jscall("test(1,2)");  
+			</action>   -->
+
+			<!-- <action name="xml_action" >
+			    jscall("console.log('xmlaction执行了')");
+			</action>  --> 
+
+			<!-- <hotspot name="多邊形熱點"
+		         keep="false"
+		         visible="true"
+		         enabled="true"
+		         handcursor="true"
+		         zorder=""
+		         capture="true"
+		         blendmode="normal"
+		         style=""
+		         alpha="1.0"
+		         autoalpha="false"
+		         fillcolor="0xFFFFFF" fillcolorhover="0xFFFFFF"   
+		         fillalpha="0.0" fillalphahover="0.1"             
+		         borderwidth="0.0" borderwidthhover="4.0"         
+		         bordercolor="0xFFFFFF" bordercolorhover="0xFFFFFF"  
+		         borderalpha="0.0" borderalphahover="0.8"           
+		         fadeintime="0.15" fadeincurve="1.1"               
+		         fadeouttime="0.3" fadeoutcurve="0.7"
+		         onover=""
+		         onhover=""
+		         onout=""
+		         οnclick=""
+		         ondown=""
+		         onup="">
+			    <point ath="..." atv="..." />           
+			    <point ath="..." atv="..." />
+			    <point ath="..." atv="..." />
+			</hotspot> -->
+
+			<area mode="align"           
+			      align="lefttop"        
+			      x="-0.900"                  
+			      y="56.800"                  
+			      width="100%"           
+			      height="100%"          
+			      />
+			<area mode="border"          
+			      left="0"		     
+			      top="0"                
+			      right="0"              
+			      bottom="0"             
+			      />
+
+			<memory maxmem="350" devices="Desktop+Flash" />
+			<memory maxmem="150" devices="Desktop+HTML5" />
+			<memory maxmem="50"  devices="Mobile|Tablet" />
+			<memory maxmem="40"  devices="iOS" />
+			<memory maxmem="50"  devices="iOS7.1" />
+</krpano>
