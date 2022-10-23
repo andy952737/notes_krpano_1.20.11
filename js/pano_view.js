@@ -32,7 +32,7 @@ function krpanoReady(get_krpano) {
 	    var h2 = -15;  
 	    var v2 = +12;     
 		
-		/* hotpsot迴圈從這帶入 */    
+		/* hotpsot迴圈從這帶入 */     
 		add_hotspot(hs_name, url, h, v);  
 		add_hotspot(hs_name2, url, h2, v2);    
 
@@ -50,9 +50,9 @@ function krpanoReady(get_krpano) {
   			krpano.call("set(hotspot[" + hs_name + "].url, " + url +");");
   			//krpano.call("set(hotspot[" + hs_name + "].onclick, js(alert(‘點擊熱點'));"); 
   			//krpano.call("set(hotspot[" + hs_name + "].onclick, click_hotspot(" + hs_name + ")"); 
-  			//krpano.set("hotspot[" + hs_name + "].onclick", "click_hotspot(" + hs_name + ")");
+  			krpano.set("hotspot[" + hs_name + "].onclick", "click_move_hotspot(" + hs_name + ")");
 
-  			krpano.call('click_hotspot(' + hs_name + ',' + url + ',' + h + ',' +  v + ')');  
+  			// krpano.call('click_move_hotspot(' + hs_name + ',' + url + ',' + h + ',' +  v + ')');  
 		    // krpano.set('hotspot[' + hs_name + '].url', url); 
 		    // krpano.set('hotspot[' + hs_name + '].ath', h);
 		    // krpano.set('hotspot[' + hs_name + '].atv', v);

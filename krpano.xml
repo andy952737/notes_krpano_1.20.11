@@ -69,37 +69,16 @@
          onloaded.addevent=""
          /> -->
 
+    <!-- 畫線 -->
+    
+
    	<!-- pano 右鍵選單 --> 
     <contextmenu fullscreen="false" versioninfo="false">
 		<item name="全螢幕" caption="全螢幕" enabled="true" separate="true" onclick="switch(fullscreen);"/> 
-		<item name="Powered by Andy Pano" caption="Powered by Andy Pano" enabled="true" separate="true" onclick="openurl('https://codelove.online/')"/>    
+		<item name="Powered by Andy Pano" caption="Powered by Andy Pano" enabled="true" separate="true" onclick="openurl('https://test2.codelove.online/')"/>    
 	</contextmenu>       
   
-			<action name="add_hotspot">   
-					addhotspot(%1);
-					set(hotspot[%1].url,%2);
-					set(hotspot[%1].ath,%3);
-					set(hotspot[%1].atv,%4); 
-					set(hotspot[%1].onclick, click_hotspot(%1));
-					<!-- jscall("console.log('%1')"); 
-					jscall("console.log('%2')");
-					jscall("console.log('%3')");
-					jscall("console.log('%4')"); -->
-					<!-- set(hotspot[newspot].scale,0.7); -->
-					<!-- set(hotspot[newspot].zoom,true); -->
-			</action>    
- 
-			<action name="click_hotspot">	      
-				jscall("console.log('%1')");
-				<!-- jscall("alert('%1')"); -->
-				<!-- jscall("test(%1)");   -->
-				<!-- js(test(%1)); -->
-				<!-- set(hotspot_h, get(hotspot[q_%1].ath));
-				set(hotspot_v, get(hotspot[q_%1].atv));	
-				spheretoscreen(hotspot_h, hotspot_v, mouse_x, mouse_y);   -->
-				<!-- js(PanoInterface.on_click_hotspot(%1, get(mouse_x), get(mouse_y), get(pano_id)));
-				jscall("console.log('xmlaction执行了')");  -->
-			</action>  
+			
 
 <!-- 			<action name="spot72">
 			  set(aa, '我是aa');
@@ -159,4 +138,33 @@
 			<memory maxmem="50"  devices="Mobile|Tablet" />
 			<memory maxmem="40"  devices="iOS" />
 			<memory maxmem="50"  devices="iOS7.1" />
+
+			<!-- krpano for action --> 
+			<action name="add_hotspot">    
+					addhotspot(%1);
+					set(hotspot[%1].url,%2);
+					set(hotspot[%1].ath,%3);
+					set(hotspot[%1].atv,%4); 
+					set(hotspot[%1].onclick, click_move_hotspot(%1,%2,%3,%4));
+					<!-- jscall("console.log('%1')"); 
+					jscall("console.log('%2')");
+					jscall("console.log('%3')");
+					jscall("console.log('%4')"); -->
+					<!-- set(hotspot[newspot].scale,0.7); -->
+					<!-- set(hotspot[newspot].zoom,true); -->
+			</action>     
+			<action name="click_move_hotspot">	      
+				jscall("console.log('%1')");
+				jscall("alert('%3')");  
+			</action>  
+
+			<!-- remork -->
+			<!-- jscall("alert('%1')"); -->
+			<!-- jscall("test(%1)");   -->
+			<!-- js(test(%1)); -->
+			<!-- set(hotspot_h, get(hotspot[q_%1].ath));
+			set(hotspot_v, get(hotspot[q_%1].atv));	
+			spheretoscreen(hotspot_h, hotspot_v, mouse_x, mouse_y);   -->
+			<!-- js(PanoInterface.on_click_hotspot(%1, get(mouse_x), get(mouse_y), get(pano_id)));
+			jscall("console.log('xmlaction执行了')");  -->
 </krpano>
