@@ -91,7 +91,8 @@ function krpanoReady(get_krpano) {
   			krpano.call("set(hotspot[" + hs_name + "].url, " + url +");");
   			//krpano.call("set(hotspot[" + hs_name + "].onclick, js(alert(‘點擊熱點'));"); 
   			//krpano.call("set(hotspot[" + hs_name + "].onclick, click_hotspot(" + hs_name + ")"); 
-  			krpano.set("hotspot[" + hs_name + "].onclick", "click_hotspot_move(" + scene_page + "," + hs_name + "," + url + "," + h + "," + v + ")");
+  			//krpano.call('click_hotspot_move(' + scene_page + ',' + hs_name + ',' + url + ',' + h + ',' +  v + ')');   
+  			krpano.set("hotspot[" + hs_name + "].onclick", "click_hotspot_move(" + scene_page + ")");
   			// krpano.set("sphere[" + hs_name + "].onclick", "click_view_change('image/vr.jpg')");
 		} 
   

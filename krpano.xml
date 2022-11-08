@@ -1,6 +1,12 @@
-<krpano onstart="loadscene(scene1);" showerrors="false">  <!-- onstart="startup();" -->
-		<include url="krpano-1.20.11/viewer/plugins/webvr.xml" />
-		<plugin name="WebVR" mobilevr_fake_support="true" />
+<krpano onstart="startup();"  showerrors="false">  <!-- onstart="startup();" , onstart="loadscene(scene1);" -->
+
+	<!--  scenes -->
+	<action name="startup">
+		loadscene("scene1", null, MERGE, BLEND(0.5)); <!-- @scene.friendly_id -->
+	</action> 
+
+	<include url="krpano-1.20.11/viewer/plugins/webvr.xml" />
+	<plugin name="WebVR" mobilevr_fake_support="true" />
        
     <textstyle name="TEXTSTYLE" font="Arial" fontsize="18" bold="true" background="false" border="false" textcolor="0xFFFFFF" effect="glow(0x000000);" textalign="center"/> 
 
@@ -123,13 +129,14 @@
 			<memory maxmem="50"  devices="iOS7.1" />
 
 			<!-- krpano for action --> 
-			<action name="add_hotspot">    
+			<action name="add_hotspot">
 					addhotspot(%1);
 					set(hotspot[%1].url,%2);
 					set(hotspot[%1].ath,%3);
 					set(hotspot[%1].atv,%4);  
 					set(hotspot[%1].onclick, click_hotspot_move(%5));
-					<!-- jscall("alert('scene1')"); -->
+					<!-- jscall("alert('%4')"); -->  
+					jscall("add_hotspot('%1, %2, %3, %4, %5')"); 
 			</action>    
 
 			<action name="to0">
@@ -141,6 +148,7 @@
 			</action>
 
 			<action name="click_hotspot_move">	      
+				<!-- jscall("alert('%2')"); -->
 				<!-- addhotspot(%2);
 				set(hotspot[%2].url,%3);
 				set(hotspot[%2].ath,%4);
