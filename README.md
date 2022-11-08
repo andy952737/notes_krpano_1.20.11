@@ -1,4 +1,4 @@
-# 前端開發模組工具 krpano 2022
+# 前端原生Java Script & Krpano 2022
 
 # web Tools
 * bootstrap
