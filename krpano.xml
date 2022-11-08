@@ -1,42 +1,25 @@
-<krpano onstart="startup();" showerrors="false">  
+<krpano onstart="loadscene(scene1);" showerrors="false">  <!-- onstart="startup();" -->
 		<include url="krpano-1.20.11/viewer/plugins/webvr.xml" />
 		<plugin name="WebVR" mobilevr_fake_support="true" />
        
     <textstyle name="TEXTSTYLE" font="Arial" fontsize="18" bold="true" background="false" border="false" textcolor="0xFFFFFF" effect="glow(0x000000);" textalign="center"/> 
 
+    <!-- 這裡寫迴圈 -->
+    <scene name="scene1">
+    	<image hfov="360.00" vfov="180.000000" voffset="0.00"> 
+    		<preview type="grid(cube,16,32,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+			<sphere url="image/vr.jpg" /> 
+		</image>
+		<!-- <preview url="image/vr2.jpg"/>   
+		<view hlookat="0.0" vlookat="0.0" camroll="0.0" fovtype="VFOV" fov="50" maxpixelzoom="1.0" fovmax="150" limitview="auto" /> -->
+	</scene>
 
-
-  	<!-- <scene name='' scenetitle="" thumburl="" nowpic="" id="" onstart="">-->
-		  
-		  <!-- 預設場景座標 -->     
-  		<view hlookat="0.0" vlookat="0.0" camroll="0.0" fovtype="VFOV" fov="50" maxpixelzoom="1.0" fovmax="150" limitview="auto" /> 
-  
-  			<!--  取得全景 '多張圖,需串接' && 使用迴圈 arrar撈資料  
-			<preview url='scene.preview_image_url' />
-			<image type="CUBE" progressive="false">
-				<left url="scene.normal_image_urls[:left]" />
-				<front url="scene.normal_image_urls[:front]" />
-				<right url="scene.normal_image_urls[:right]%>" />
-				<back url="scene.normal_image_urls[:back]%>" />
-				<up url="scene.normal_image_urls[:up]" />
-				<down url="scene.normal_image_urls[:down]" />
-				<mobile>
-					<left url="scene.mobile_image_urls[:left]" />
-					<front url="scene.mobile_image_urls[:front]" />
-					<right url="scene.mobile_image_urls[:right]" />
-					<back url="scene.mobile_image_urls[:back]" />
-					<up url="scene.mobile_image_urls[:up]" />
-					<down url="scene.mobile_image_urls[:down]" />
-				</mobile>
-			</image> -->
-
-			<!-- 取得全景 1張圖 -->
-	    	<preview url=""/>  
-			<image hfov="360.00" vfov="180.000000" voffset="0.00">
-				<sphere url="image/vr.jpg" />
-			</image>	
-
-   	<!-- </scene> -->
+	<scene name="scene2">
+    	<image hfov="360.00" vfov="180.000000" voffset="0.00"> 
+    		<preview type="grid(cube,16,32,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+			<sphere url="image/vr2.jpg" /> 
+		</image>
+	</scene>
 
    	<!-- 熱點的參數 -->  
 	<!--  <hotspot name="場景1"
@@ -144,19 +127,34 @@
 					addhotspot(%1);
 					set(hotspot[%1].url,%2);
 					set(hotspot[%1].ath,%3);
-					set(hotspot[%1].atv,%4); 
-					set(hotspot[%1].onclick, click_move_hotspot(%1,%2,%3,%4));
-					<!-- jscall("console.log('%1')"); 
-					jscall("console.log('%2')");
-					jscall("console.log('%3')");
-					jscall("console.log('%4')"); -->
-					<!-- set(hotspot[newspot].scale,0.7); -->
-					<!-- set(hotspot[newspot].zoom,true); -->
-			</action>     
-			<action name="click_move_hotspot">	      
-				jscall("console.log('%1')");
-				jscall("alert('%3')");  
-			</action>  
+					set(hotspot[%1].atv,%4);  
+					set(hotspot[%1].onclick, click_hotspot_move(%5));
+					<!-- jscall("alert('scene1')"); -->
+			</action>    
+
+			<action name="to0">
+				loadscene("%1", null, MERGE, BLEND(0.5));
+			</action>
+
+			<action name="to1">
+				loadscene("%1", null, MERGE, BLEND(0.5));
+			</action>
+
+			<action name="click_hotspot_move">	      
+				<!-- addhotspot(%2);
+				set(hotspot[%2].url,%3);
+				set(hotspot[%2].ath,%4);
+				set(hotspot[%2].atv,%5); -->
+				loadscene("%1", null, MERGE, BLEND(0.5));
+			</action>   
+
+			<!-- <action name="on_idle">
+				js(PanoInterface.on_idle(get(view.hlookat), get(view.vlookat), get(view.fov), get(pano_id)));
+			</action> -->
+			<!-- <action name="on_click_pano">
+				screentosphere(mouse.x,mouse.y,ath,atv);
+				js(PanoInterface.on_click_pano(get(ath), get(atv), get(pano_id)));
+			</action> -->
 
 			<!-- remork -->
 			<!-- jscall("alert('%1')"); -->
@@ -167,4 +165,11 @@
 			spheretoscreen(hotspot_h, hotspot_v, mouse_x, mouse_y);   -->
 			<!-- js(PanoInterface.on_click_hotspot(%1, get(mouse_x), get(mouse_y), get(pano_id)));
 			jscall("console.log('xmlaction执行了')");  -->
+
+			<autorotate enabled="true"
+			waittime="5.0"
+			speed="-3.0"
+			horizon="0.0"
+			tofov="120.0"
+			/>
 </krpano>
