@@ -10,7 +10,7 @@ embedpano({
 			var krpano = document.getElementById('krpanoSWFObject');
 			krpanoReady(krpano); 
 	}      
-});  
+});   
  
 function krpanoReady(get_krpano) {  
 		var krpano = get_krpano;    
@@ -33,12 +33,9 @@ function krpanoReady(get_krpano) {
 	    var h2 = -15;  
 	    var v2 = +12;     
 	    var scene_title = "scene1"; 
-
-	    //if (scene_title == "scene1") { 
-	    	var scene_page2 = "scene2";
-	    //} else {  
-	    	var scene_page1 = "scene1";					
-	   	//}
+    	var scene_page1 = "scene1";
+    	var scene_page2 = "scene2";
+    	var scene_page3 = "scene3";					
 		
 		/* hotpsot迴圈從這帶入 */      
 		add_hotspot(hs_name, url, h, v, scene_page2);  
@@ -80,6 +77,19 @@ function krpanoReady(get_krpano) {
 			//krpano.call("to1"); 
 			krpano.call('to1(' + scene_title + ')');    
 			add_hotspot(hs_name2, url, h2, v2, scene_page);    
+		});
+
+		$(".click_img_c").click(function(index){
+		    var hs_name2 = 'hs0001'  //+ ((Date.now() + Math.random()) | 0); 
+		   	var url = '/image/icon_hotspot.png'; 
+		    var h2 = -15;   
+		    var v2 = +12;  
+			var krpano = document.getElementById("krpanoSWFObject");
+
+			var scene_page3 = "scene3";
+			
+			//krpano.call("to1"); 
+			krpano.call('to2(' + scene_page3 + ')');    
 		});
 
 		/* add for hotspot */    

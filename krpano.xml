@@ -3,15 +3,27 @@
 	<!--  scenes -->
 	<action name="startup">
 		loadscene("scene1", null, MERGE, BLEND(0.5)); <!-- @scene.friendly_id -->
-	</action> 
+	</action>  
 
 	<include url="krpano-1.20.11/viewer/plugins/webvr.xml" />
 	<plugin name="WebVR" mobilevr_fake_support="true" />
+	<!-- <plugin name="previewimage" url="previewimage.png" align="center" preload="true" /> -->
+
+<!-- 	<plugin name="loadingtext" url="plugins/textfield.swf" keep="true" zorder="100" visible="true" enabled="false"
+        preload="true"
+        align="center" 
+        autoheight="true"
+        width="100"
+        background="false"
+        html="[p]場景載入中...[/p]"
+        css="p {color:#FFFFFF; font-family:arial; font-size:16px }"
+    /> -->
+	
        
     <textstyle name="TEXTSTYLE" font="Arial" fontsize="18" bold="true" background="false" border="false" textcolor="0xFFFFFF" effect="glow(0x000000);" textalign="center"/> 
 
     <!-- 這裡寫迴圈 -->
-    <scene name="scene1">
+    	<scene name="scene1">
     	<image hfov="360.00" vfov="180.000000" voffset="0.00"> 
     		<preview type="grid(cube,16,32,512,0xCCCCCC,0xF6F6F6,0x999999);" />
 			<sphere url="image/vr.jpg" /> 
@@ -23,7 +35,14 @@
 	<scene name="scene2">
     	<image hfov="360.00" vfov="180.000000" voffset="0.00"> 
     		<preview type="grid(cube,16,32,512,0xCCCCCC,0xF6F6F6,0x999999);" />
-			<sphere url="image/vr2.jpg" /> 
+			<sphere url="image/2f.jpg" /> 
+		</image>
+	</scene>
+
+	<scene name="scene3">
+    	<image hfov="360.00" vfov="180.000000" voffset="0.00"> 
+    		<preview type="grid(cube,16,32,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+			<sphere url="image/g1.jpg" /> 
 		</image>
 	</scene>
 
@@ -62,9 +81,9 @@
     
 
    	<!-- pano 右鍵選單 --> 
-    <contextmenu fullscreen="false" versioninfo="false">
+    	<contextmenu fullscreen="false" versioninfo="false">
 		<item name="全螢幕" caption="全螢幕" enabled="true" separate="true" onclick="switch(fullscreen);"/> 
-		<item name="Powered by Andy Pano" caption="Powered by Andy Pano" enabled="true" separate="true" onclick="openurl('https://test2.codelove.online/')"/>    
+		<item name="Powered by Andy Pano" caption="Powered by Andy Pano" enabled="true" separate="true" onclick="openurl('https://web.codelove.online/')"/>    
 	</contextmenu>       
   
 			
@@ -144,6 +163,10 @@
 			</action>
 
 			<action name="to1">
+				loadscene("%1", null, MERGE, BLEND(0.5));
+			</action>
+
+			<action name="to2">
 				loadscene("%1", null, MERGE, BLEND(0.5));
 			</action>
 
