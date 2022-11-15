@@ -7,7 +7,7 @@
 
 	<include url="krpano-1.20.11/viewer/plugins/webvr.xml" />
 	<plugin name="WebVR" mobilevr_fake_support="true" />
-	<!-- <plugin name="previewimage" url="previewimage.png" align="center" preload="true" /> -->
+	<!-- <plugin name="previewimage" url="previewimage.png" align="center" preload="true" /> --> 
 
 <!-- 	<plugin name="loadingtext" url="plugins/textfield.swf" keep="true" zorder="100" visible="true" enabled="false"
         preload="true"
@@ -149,14 +149,14 @@
 
 			<!-- krpano for action --> 
 			<action name="add_hotspot">
-					addhotspot(%1);
-					set(hotspot[%1].url,%2);
-					set(hotspot[%1].ath,%3);
-					set(hotspot[%1].atv,%4);  
-					set(hotspot[%1].onclick, click_hotspot_move(%5));
-					<!-- jscall("alert('%4')"); -->  
-					jscall("add_hotspot('%1, %2, %3, %4, %5')"); 
-			</action>    
+				addhotspot(%1);
+				set(hotspot[%1].url,%2);
+				set(hotspot[%1].ath,%3);
+				set(hotspot[%1].atv,%4);  
+				set(hotspot[%1].onclick, click_hotspot_move(%5));
+				<!-- jscall("alert('%4')"); -->  
+				<!-- jscall("add_hotspot('%1, %2, %3, %4, %5')");  -->
+			</action>     
 
 			<action name="to0">
 				loadscene("%1", null, MERGE, BLEND(0.5));
@@ -171,11 +171,6 @@
 			</action>
 
 			<action name="click_hotspot_move">	      
-				<!-- jscall("alert('%2')"); -->
-				<!-- addhotspot(%2);
-				set(hotspot[%2].url,%3);
-				set(hotspot[%2].ath,%4);
-				set(hotspot[%2].atv,%5); -->
 				loadscene("%1", null, MERGE, BLEND(0.5));
 			</action>   
 
