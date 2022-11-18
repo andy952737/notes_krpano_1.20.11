@@ -1,8 +1,11 @@
 function krpanoReady(get_krpano) {  
-		var scenes = $(".data").data("scenename");
+
+		
+
+		//var scenes = $(".data").data("scenename");
 
 		var krpano = get_krpano;    
-
+ 
 		// var fov = Number( krpano.get("view.fov") );
 		// fov += 10.0;
 		// krpano.set("view.fov", fov);   
@@ -11,7 +14,7 @@ function krpanoReady(get_krpano) {
 	    //krpano.set("autorotate.enabled", true);
 	    //krpano.call('xml_action();');   
 	    //krpano.call('addhot2spot();');    
-
+ 
 	    /* add hotspot var name */
 	    var hs_name = 'hs0001' // + ((Date.now() + Math.random()) | 0); 
 	    var hs_name2 = 'hs0002'  //+ ((Date.now() + Math.random()) | 0); 
