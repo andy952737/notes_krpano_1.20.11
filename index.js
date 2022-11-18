@@ -3,17 +3,20 @@ function krpanoReady(get_krpano) {
 		var test_data = document.querySelector(".example");
 		console.log(test_data.getAttribute('data-scenename'));
 
-		//let collection = document.getElementById("example"); 
-    	//let collection = document.getElementsByClassName("example");
-    	//let collection = document.querySelector("example");
-		//var dd = collection[0].getAttribute('data-scenename');
-		//var dd = collection.document.querySelector('[data-scenename]');
+		json_demo = {
+			id: 1,
+			friendly_id: "scene1",
+			vr_url: "vr.jpg"
+		}
+		json_true = JSON.stringify(json_demo);
+		//console.log(JSON.stringify(json_demo));
+		console.log(JSON.parse(json_true));
+		console.log(JSON.parse(json_true).id);
+		console.log(JSON.parse(json_true).friendly_id);
+		console.log(JSON.parse(json_true).vr_url);
 
-    	//const el1 = document.querySelector('[data-friendly_id="so12345678"]');
-    	//const el1 = document.querySelector('[data-friendly_id]');
-	    //var el2 = document.querySelector('[data-scenename]');
-		//console.log(el1);		
-		//alert(el1);
+		// var json_text = JSON.stringify(test_data.getAttribute('data-scenes'));
+		// console.log(JSON.parse(json_text));	 
 
 		//var scenes = $(".data").data("scenename");
 
