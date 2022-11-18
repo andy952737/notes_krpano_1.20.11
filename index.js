@@ -1,6 +1,19 @@
 function krpanoReady(get_krpano) {  
 
-		
+		var test_data = document.querySelector(".example");
+		console.log(test_data.getAttribute('data-scenename'));
+
+		//let collection = document.getElementById("example"); 
+    	//let collection = document.getElementsByClassName("example");
+    	//let collection = document.querySelector("example");
+		//var dd = collection[0].getAttribute('data-scenename');
+		//var dd = collection.document.querySelector('[data-scenename]');
+
+    	//const el1 = document.querySelector('[data-friendly_id="so12345678"]');
+    	//const el1 = document.querySelector('[data-friendly_id]');
+	    //var el2 = document.querySelector('[data-scenename]');
+		//console.log(el1);		
+		//alert(el1);
 
 		//var scenes = $(".data").data("scenename");
 
