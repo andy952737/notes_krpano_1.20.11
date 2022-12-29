@@ -10,7 +10,7 @@
 		<image hfov="360.00" vfov="180.000000" voffset="0.00"> 
 			<preview type="grid(cube,16,32,512,0xCCCCCC,0xF6F6F6,0x999999);" />
 			<sphere url="image/vr.jpg" /> 
-		</image>
+		</image> 
 		<!-- <preview url="image/vr2.jpg"/>   
 		<view hlookat="0.0" vlookat="0.0" camroll="0.0" fovtype="VFOV" fov="50" maxpixelzoom="1.0" fovmax="150" limitview="auto" /> -->
 	</scene>
