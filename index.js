@@ -20,7 +20,7 @@ function krpanoReady(get_krpano) {
 
 		//var scenes = $(".data").data("scenename");
 
-		var krpano = get_krpano;    
+		var krpano = get_krpano;     
  
 		// var fov = Number( krpano.get("view.fov") );
 		// fov += 10.0;
@@ -94,7 +94,7 @@ function krpanoReady(get_krpano) {
 			var krpano = document.getElementById("krpanoSWFObject");
 
 			var scene_page3 = "scene3";
-			var scene_page = "scene1";
+			var scene_page = "scene1"; 
 			
 			//krpano.call("to1"); 
 			krpano.call('to2(' + scene_page3 + ')');  

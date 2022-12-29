@@ -1,0 +1,11 @@
+<krpano>
+
+ <include url="polygon hotspot/polygon.xml"/>
+ <!-- <include url="poligon hotspot/save_poligon.xml"/> -->
+ 
+ <style name="hs" onclick="set(hsClick, calc('' + name + '')); trace(hsClick);" />
+ 
+ <preview type="grid(cube,64,64,256,0x61a4ff,0xFFFFFF,0xFFFFFF);" details="10" />
+	<view hlookat="0" />
+		
+</krpano>

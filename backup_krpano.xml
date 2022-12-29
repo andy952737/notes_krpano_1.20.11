@@ -1,0 +1,321 @@
+<krpano onstart="startup();"  showerrors="false">  <!-- onstart="startup();" , onstart="loadscene(scene1);" -->
+	<plugin name="WebVR" mobilevr_fake_support="true" />
+
+	<!--  scenes -->
+	<action name="startup">
+		loadscene("scene1", null, MERGE, BLEND(0.5)); <!-- @scene.friendly_id -->
+	</action>   
+
+	<!-- <include url="krpano-1.20.11/viewer/plugins/webvr.xml" />     -->
+	<!-- <include url="krpano-1.20.11/viewer/plugins/polygon.xml"/> -->
+	<!-- <plugin name="editor" url="krpano-1.20.11/viewer/plugins/editor.swf" keep="true" /> --> 
+	
+	<!-- <plugin name="previewimage" url="previewimage.png" align="center" preload="true" /> --> 
+
+	<!-- <plugin name="loadingtext" url="plugins/textfield.swf" keep="true" zorder="100" visible="true" enabled="false"
+	        preload="true"
+	        align="center" 
+	        autoheight="true"
+	        width="100"
+	        background="false"
+	        html="[p]場景載入中...[/p]"
+	        css="p {color:#FFFFFF; font-family:arial; font-size:16px }"
+    	/> -->
+	
+       
+    <textstyle name="TEXTSTYLE" font="Arial" fontsize="18" bold="true" background="false" border="false" textcolor="0xFFFFFF" effect="glow(0x000000);" textalign="center"/> 
+
+    <!-- 這裡寫迴圈 -->
+    	<scene name="scene1">
+    	<image hfov="360.00" vfov="180.000000" voffset="0.00"> 
+    		<preview type="grid(cube,16,32,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+			<sphere url="image/vr.jpg" /> 
+		</image>
+		<!-- <preview url="image/vr2.jpg"/>   
+		<view hlookat="0.0" vlookat="0.0" camroll="0.0" fovtype="VFOV" fov="50" maxpixelzoom="1.0" fovmax="150" limitview="auto" /> -->
+	</scene>
+
+	<scene name="scene2">
+    	<image hfov="360.00" vfov="180.000000" voffset="0.00"> 
+    		<preview type="grid(cube,16,32,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+			<sphere url="image/2f.jpg" /> 
+		</image>
+	</scene>
+
+	<scene name="scene3">
+    	<image hfov="360.00" vfov="180.000000" voffset="0.00"> 
+    		<preview type="grid(cube,16,32,512,0xCCCCCC,0xF6F6F6,0x999999);" />
+			<sphere url="image/g1.jpg" /> 
+		</image>
+	</scene>
+
+   	<!-- 熱點的參數 -->  
+	 <!-- <hotspot name="addhot2spot"
+         type="image"
+         url="image/icon_hotspot.png"
+         alturl="image/icon_hotspot.png"
+         keep="false"
+         visible="true"
+         enabled="true"
+         handcursor="true"
+         cursor="pointer"
+         maskchildren="false"
+         zorder=""
+         style=""
+         ath="0.0" atv="0.0"
+         edge="center"
+         zoom="false"
+         distorted="false"
+         rx="0.0" ry="0.0" rz="0.0"
+         width="80" height="80"
+         scale="1.0"
+         rotate="0.0"
+         alpha="1.0"
+         onover.addevent=""
+         onhover.addevent=""
+         onout.addevent=""
+         ondown.addevent=""
+         onup.addevent=""
+         onclick.addevent=""
+         onloaded.addevent=""
+         /> -->
+
+         <!-- <hotspot name="add_hotspot" url="image/icon_hotspot.png" scale="0.5" ath="-0.900" atv="56.800" ondown="draghotspot();" onclick="addhot2spot();" />
+         <action name="add_hotspot">
+		addhotspot(add_hotspot);
+		set(hotspot[add_hotspot].url,image/icon_hotspot.png);
+		set(hotspot[add_hotspot].ath,-0.900);
+		set(hotspot[add_hotspot].atv,56.800);
+		set(hotspot[add_hotspot].scale,0.7);
+		set(hotspot[add_hotspot].zoom,true);
+	</action> -->
+
+<!-- 	<hotspot name="spotpolygon9482" tag="polygon" style="Polygonpisteverte" descriptionid=""
+	handcursor="false" enable="true">
+	    <point ath="-122.121464" atv="38.813559" />	    
+	    <point ath="-133.538260" atv="23.246637" />
+	    <point ath="-114.034511" atv="0" />
+	  </hotspot>
+	  <hotspot name="spotpolygon9482" devices="flash" zorder="1"/>
+	  <hotspot name="spotpolygon9482" devices="html5" zorder="3" zorder2="1"/> -->
+	<!-- <style></style>     -->
+	<!-- <hotspot name="f1ElevUpBtnLeft" fillcolor="0xedd382" fillalpha="0.8" borderwidth="7.0" bordercolor="0xedd382"
+                    borderalpha="1.0"   
+                    depth="1000"
+                    polyline="true"
+                    scaleflying="true"
+                    tx="0"
+                    ty="0"
+                    tz="0"
+                    zorder="20"
+                    onclick="js(alertApp.add('짝수층 엘리베이터를 이용해주세요.', 2000, 'warning'))"
+                 >
+            <point ath="-38.43227" atv="7.876428" />
+            <point ath="-38.460491" atv="8.784288" />
+            <point ath="-37.747636" atv="8.869199" />
+            <point ath="0" atv="70" />
+        </hotspot>  -->
+
+        <!-- <hotspot name="spotpolygon9482" tag="polygon" style="Polygonpisteverte" descriptionid="" handcursor="true" enable="true">
+		    <point ath="-38.43227" atv="7.876428" />
+            <point ath="-38.460491" atv="8.784288" />
+            <point ath="-37.747636" atv="8.869199" />
+		</hotspot> --> 
+
+	<!-- <hotspot name="panel1" url="image/icon_hotspot.png" keep="true" zorder="1" ath="-0.900" atv="0" scale="1" edge="bottom" zoom="false" onclick="onclick_act()" />
+ 
+	<hotspot name="hs1" url="image/icon_hotspot.png">
+		<point ath="-49.58" atv="-17.02" />
+		<point ath="9.51" atv="-26.98" />
+		<point ath="27.68" atv="14.47" />
+		<point ath="8.00" atv="38.95" />
+		<point ath="-49.80" atv="31.56" />
+		<point ath="-58.99" atv="14.02" />
+	</hotspot>  -->
+
+	<!-- https://krpano.com/forum/wbb/index.php?page=Thread&threadID=9239 -->
+	<!-- <hotspot name="panel2" 
+         keep="false"
+         visible="true"
+         enabled="true"
+         handcursor="true"
+         cursor="pointer"
+         style=""
+         alpha="1.0"
+         polyline="false"
+         fillcolor="0xAAAAAA"
+         fillalpha="0.5"
+         borderwidth="3.0"
+         bordercolor="0xAAAAAA"
+         borderalpha="1.0"
+         borderzoom="0.0"
+         borderhittest="false"
+         subdiv="true"
+         onover=""
+         onhover=""
+         onout=""
+         ondown=""
+         onup=""
+         onclick=""
+         onloaded="">
+	    <point ath="-0.900" atv="30" />
+	    <point ath="-0.300" atv="50" />
+	    <point ath="-0.600" atv="70" />
+	</hotspot> -->
+
+	 <!-- <hotspot name="hs1" style="hs">
+		 <point ath="-4.840192634885057" atv="-23.780913630502834"/>
+		 <point ath="-5.179986274781186" atv="-6.339470836320649"/>
+		 <point ath="-22.55599434502136" atv="-6.090448324218049"/>
+		 <point ath="-21.575744423627498" atv="-22.716995059276453"/>
+	 </hotspot>
+
+	 <hotspot name="hs2" style="hs">
+		 <point ath="3.1352249822049885" atv="-22.668057972616587"/>
+		 <point ath="24.45438499230454" atv="-20.3747428065223"/>
+		 <point ath="22.83358202915406" atv="-5.762368239888183"/>
+		 <point ath="6.5343383340891705" atv="-6.771930697808463"/>
+	 </hotspot>
+ -->
+	<!-- <action name="log" autorun="onstart">
+		showlog();
+	</action> -->
+
+	<!-- <action name="onclick_act">
+	   trace('hitx: ',get(hitx),' hity: ',get(hity));
+	   if(hitx LT 0.08 AND hity LT 0.73, removehotspot(get(name)));
+	   if(hitx GT 0.83 AND hity GT 0.86, openurl('https://cms4vr.com',_blank));
+	</action> --> 
+	<action name="add_hotspot">
+		addhotspot(panel1);
+		set(hotspot[panel1].url,image/icon_hotspot.png);
+		set(hotspot[panel1].ath,-0.900);
+		set(hotspot[panel1].atv,0);
+		set(hotspot[panel1].scale,0.7);
+		set(hotspot[panel1].zoom,false);
+		<!-- jscall("add_hotspot('%1, %2, %3, %4, %5')");  -->
+	</action> 
+ 
+
+    	<!-- 畫線 -->
+
+   	<!-- pano 右鍵選單 --> 
+    	<contextmenu fullscreen="false" versioninfo="false">
+		<item name="全螢幕" caption="全螢幕" enabled="true" separate="true" onclick="switch(fullscreen);"/> 
+		<item name="Powered by Andy Pano" caption="Powered by Andy Pano" enabled="true" separate="true" onclick="openurl('https://web.codelove.online/')"/>    
+	</contextmenu>       
+  
+			
+
+<!-- 			<action name="spot72">
+			  set(aa, '我是aa');
+			  js(test(get(aa), bb)); 
+			  jscall("test(1,2)");  
+			</action>   -->
+
+			<!-- <action name="xml_action" >
+			    jscall("console.log('xmlaction执行了')");
+			</action>  --> 
+
+			<!-- <hotspot name="多邊形熱點"
+		         keep="false"
+		         visible="true"
+		         enabled="true"
+		         handcursor="true"
+		         zorder=""
+		         capture="true"
+		         blendmode="normal"
+		         style=""
+		         alpha="1.0"
+		         autoalpha="false"
+		         fillcolor="0xFFFFFF" fillcolorhover="0xFFFFFF"   
+		         fillalpha="0.0" fillalphahover="0.1"             
+		         borderwidth="0.0" borderwidthhover="4.0"         
+		         bordercolor="0xFFFFFF" bordercolorhover="0xFFFFFF"  
+		         borderalpha="0.0" borderalphahover="0.8"           
+		         fadeintime="0.15" fadeincurve="1.1"               
+		         fadeouttime="0.3" fadeoutcurve="0.7"
+		         onover=""
+		         onhover=""
+		         onout=""
+		         οnclick=""
+		         ondown=""
+		         onup="">
+			    <point ath="..." atv="..." />           
+			    <point ath="..." atv="..." />
+			    <point ath="..." atv="..." />
+			</hotspot> -->
+
+			<area mode="align"           
+			      align="lefttop"        
+			      x="-0.900"                  
+			      y="56.800"                  
+			      width="100%"           
+			      height="100%"          
+			      />
+			<area mode="border"          
+			      left="0"		     
+			      top="0"                
+			      right="0"              
+			      bottom="0"             
+			      />
+
+			<memory maxmem="350" devices="Desktop+Flash" />
+			<memory maxmem="150" devices="Desktop+HTML5" />
+			<memory maxmem="50"  devices="Mobile|Tablet" />
+			<memory maxmem="40"  devices="iOS" />
+			<memory maxmem="50"  devices="iOS7.1" />
+
+			<!-- krpano for action --> 
+			<action name="add_hotspot">
+				addhotspot(%1);
+				set(hotspot[%1].url,%2);
+				set(hotspot[%1].ath,%3);
+				set(hotspot[%1].atv,%4);  
+				set(hotspot[%1].onclick, click_hotspot_move(%5));
+				<!-- jscall("alert('%4')"); -->  
+				<!-- jscall("add_hotspot('%1, %2, %3, %4, %5')");  -->
+			</action>     
+
+			<action name="to0">
+				loadscene("%1", null, MERGE, BLEND(0.5));
+			</action>
+
+			<action name="to1">
+				loadscene("%1", null, MERGE, BLEND(0.5));
+			</action>
+
+			<action name="to2">
+				loadscene("%1", null, MERGE, BLEND(0.5));
+			</action>
+
+			<action name="click_hotspot_move">	      
+				loadscene("%1", null, MERGE, BLEND(0.5));
+			</action>   
+
+			<!-- <action name="on_idle">
+				js(PanoInterface.on_idle(get(view.hlookat), get(view.vlookat), get(view.fov), get(pano_id)));
+			</action> -->
+			<!-- <action name="on_click_pano">
+				screentosphere(mouse.x,mouse.y,ath,atv);
+				js(PanoInterface.on_click_pano(get(ath), get(atv), get(pano_id)));
+			</action> -->
+
+			<!-- remork -->
+			<!-- jscall("alert('%1')"); -->
+			<!-- jscall("test(%1)");   -->
+			<!-- js(test(%1)); -->
+			<!-- set(hotspot_h, get(hotspot[q_%1].ath));
+			set(hotspot_v, get(hotspot[q_%1].atv));	
+			spheretoscreen(hotspot_h, hotspot_v, mouse_x, mouse_y);   -->
+			<!-- js(PanoInterface.on_click_hotspot(%1, get(mouse_x), get(mouse_y), get(pano_id)));
+			jscall("console.log('xmlaction执行了')");  -->
+
+			<autorotate enabled="true"
+			waittime="5.0"
+			speed="-3.0"
+			horizon="0.0"
+			tofov="120.0"
+			/>
+
+</krpano>
